@@ -25,21 +25,20 @@ Repositório destinado ao laboratório prático da **Pós Tech FIAP - DevOps & C
 
 * `cluster.yaml`: Configuração do cluster (instâncias e roles).
 * `app.yaml`: Manifesto da aplicação Nginx e LoadBalancer.
+* `setup.sh`: Script para instalação do eksctl.
 
 ---
 
 ## 🚀 Passo a Passo do Laboratório
 
 ### 1. Preparação do CloudShell
-O CloudShell não persiste binários em `/usr/local/bin`. Execute o comando abaixo para instalar o `eksctl`:
+Execute o comando abaixo para instalar o `eksctl`:
 
-```bash
-curl --silent --location "[https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname](https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname) -s)_amd64.tar.gz" | tar xz -C /tmp
-sudo mv /tmp/eksctl /usr/local/bin
-eksctl version
+```chmod +x setup.sh
+./setup.sh
 ```
 ### 2. Ajuste de Permissões (AWS Academy)
-No ambiente do AWS Academy, é obrigatório o uso da `LabRole`. Primeiro, identifique o ID da sua conta AWS para configurar o arquivo YAML corretamente:
+No ambiente do AWS Academy, é obrigatório o uso da `LabRole`. Primeiro, identifique o ID da sua conta AWS para configurar o arquivo YAML (cluster.yaml) corretamente:
 
 ```bash
 aws sts get-caller-identity --query Account --output text

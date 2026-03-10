@@ -2,9 +2,12 @@ apiVersion: eksctl.io/v1alpha5
 kind: ClusterConfig
 
 metadata:
-  name: fiap-eks-aws-cluster
+  name: fiap-eks-live
   region: us-east-1
   version: "1.31"
+
+iam:
+  serviceRoleARN: "arn:aws:iam::080947957575:role/LabRole"
 
 managedNodeGroups:
   - name: standard-nodes
@@ -13,3 +16,5 @@ managedNodeGroups:
     minSize: 1
     maxSize: 3
     volumeSize: 20
+    iam:
+      instanceRoleARN: "arn:aws:iam::080947957575:role/LabRole"

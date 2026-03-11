@@ -7,7 +7,7 @@ metadata:
   version: "1.31"
 
 iam:
-  serviceRoleARN: "arn:aws:iam::080947957575:role/LabRole"
+  serviceRoleARN: "arn:aws:iam::539629002153:role/LabRole"
 
 managedNodeGroups:
   - name: standard-nodes
@@ -17,4 +17,4 @@ managedNodeGroups:
     maxSize: 3
     volumeSize: 20
     iam:
-      instanceRoleARN: "arn:aws:iam::080947957575:role/LabRole"
+      instanceRoleARN: "arn:aws:iam::539629002153:role/LabRole"
